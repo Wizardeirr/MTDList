@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_controller"
+    app:startDestination="@id/fragmentMainTodolist">
+
+    <fragment
+        android:id="@+id/fragmentMainTodolist"
+        android:name="com.volkankelleci.todolist.view.FragmentMainTodolist"
+        android:label="FragmentMainTodolist" >
+        <action
+            android:id="@+id/action_fragmentMainTodolist_to_fragmentNotePart"
+            app:destination="@id/fragmentNotePart" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentNotePart"
+        android:name="com.volkankelleci.todolist.view.FragmentNotePart"
+        android:label="FragmentNotePart" />
+</navigation>
