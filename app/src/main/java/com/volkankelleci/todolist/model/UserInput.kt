@@ -7,7 +7,6 @@ import androidx.room.PrimaryKey
 data class UserInput(
     val title:String,
     val explain:String,
-    val image:String
 ){
     @PrimaryKey(autoGenerate = true) //ROOM icin
     var uuid:Int=0
