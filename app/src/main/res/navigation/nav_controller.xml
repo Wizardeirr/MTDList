@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_fragmentMainTodolist_to_fragmentNotePart"
             app:destination="@id/fragmentNotePart" />
+        <action
+            android:id="@+id/action_fragmentMainTodolist_to_updateFragment"
+            app:destination="@id/updateFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragmentNotePart"
@@ -19,5 +22,16 @@
         <action
             android:id="@+id/action_fragmentNotePart_to_fragmentMainTodolist"
             app:destination="@id/fragmentMainTodolist" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.volkankelleci.todolist.view.UpdateFragment"
+        android:label="UpdateFragment" >
+        <action
+            android:id="@+id/action_updateFragment_to_fragmentMainTodolist"
+            app:destination="@id/fragmentMainTodolist" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.volkankelleci.todolist.model.UserInput" />
     </fragment>
 </navigation>
