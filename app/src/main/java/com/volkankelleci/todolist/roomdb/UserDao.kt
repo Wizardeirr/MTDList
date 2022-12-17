@@ -10,7 +10,7 @@ import com.volkankelleci.todolist.model.UserInput
 @androidx.room.Dao
 interface UserDao {
     @Insert (onConflict =OnConflictStrategy.REPLACE)
-    suspend fun addUser(list:List<UserInput>)
+    suspend fun addUser(user:UserInput)
     @Delete
     suspend fun deleteAll(list:List<UserInput>)
     @Query("SELECT*FROM userinput") // that name should be as from model of Entity name

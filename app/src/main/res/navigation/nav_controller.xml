@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/fragmentNotePart"
         android:name="com.volkankelleci.todolist.view.FragmentNotePart"
-        android:label="FragmentNotePart" />
+        android:label="FragmentNotePart" >
+        <action
+            android:id="@+id/action_fragmentNotePart_to_fragmentMainTodolist"
+            app:destination="@id/fragmentMainTodolist" />
+    </fragment>
 </navigation>
