@@ -8,7 +8,7 @@ import com.volkankelleci.todolist.R
 import com.volkankelleci.todolist.model.UserInput
 import kotlinx.android.synthetic.main.recycler_row.view.*
 
-class RecyclerAdapter(val UserInputs:ArrayList<UserInput>): RecyclerView.Adapter<RecyclerAdapter.UserVH>() {
+class RecyclerAdapter(var UserInputs:List<UserInput>): RecyclerView.Adapter<RecyclerAdapter.UserVH>() {
 
     class UserVH (var itemView:View):RecyclerView.ViewHolder(itemView){
 
@@ -27,5 +27,9 @@ class RecyclerAdapter(val UserInputs:ArrayList<UserInput>): RecyclerView.Adapter
 
     override fun getItemCount(): Int {
         return UserInputs.size
+    }
+    fun setData(user:List<UserInput>){
+        this.UserInputs=user
+        notifyDataSetChanged()
     }
 }

@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 
 class FragmentNotePartViewModel(application: Application):AndroidViewModel(application) {
 
-    private val readAllDatas:LiveData<List<UserInput>>
+    val readAllDatas:LiveData<List<UserInput>>
     private val repository:Repository
 
     init {

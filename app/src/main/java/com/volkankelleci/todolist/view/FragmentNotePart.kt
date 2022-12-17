@@ -34,6 +34,7 @@ class FragmentNotePart: Fragment(R.layout.fragment_note_part) {
         viewModel=ViewModelProvider(this).get(FragmentNotePartViewModel::class.java)
         return view
 
+
     }
 
     private fun insertToDataBase() {
