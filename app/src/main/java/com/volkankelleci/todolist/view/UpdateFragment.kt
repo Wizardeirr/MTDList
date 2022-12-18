@@ -39,6 +39,7 @@ class UpdateFragment : Fragment() {
         viewModel=ViewModelProvider(this).get(FragmentNotePartViewModel::class.java)
         val binder=FragmentUpdateBinding.bind(view)
         binding=binder
+
         binder.updateTitleText.setText(args.currentUser.title)
         binder.updatetodoText.setText(args.currentUser.explain)
 
@@ -73,6 +74,7 @@ class UpdateFragment : Fragment() {
     private fun inputCheck(titleName: String, todoStep: String): Boolean {
         return !(TextUtils.isEmpty(titleName) && TextUtils.isEmpty(todoStep))
     }
+
 
     override fun onDestroy() {
         super.onDestroy()

@@ -29,6 +29,9 @@ class RecyclerAdapter(var UserInputs:List<UserInput>): RecyclerView.Adapter<Recy
             val action=FragmentMainTodolistDirections.actionFragmentMainTodolistToUpdateFragment(UserInputs.get(position))
             holder.itemView.findNavController().navigate(action)
         }
+        holder.itemView.delete_image.setOnClickListener {
+
+        }
     }
 
     override fun getItemCount(): Int {

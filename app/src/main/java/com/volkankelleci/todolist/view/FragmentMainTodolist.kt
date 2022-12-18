@@ -12,8 +12,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.volkankelleci.todolist.R
 import com.volkankelleci.todolist.adapter.RecyclerAdapter
 import com.volkankelleci.todolist.databinding.MainFragmentTodolistBinding
+import com.volkankelleci.todolist.model.UserInput
 import com.volkankelleci.todolist.viewmodel.FragmentNotePartViewModel
 import kotlinx.android.synthetic.main.main_fragment_todolist.*
+import kotlinx.android.synthetic.main.recycler_row.*
+import javax.inject.Inject
+
 
 class FragmentMainTodolist : Fragment(R.layout.main_fragment_todolist) {
 
@@ -38,6 +42,7 @@ class FragmentMainTodolist : Fragment(R.layout.main_fragment_todolist) {
         viewModel.readAllDatas.observe(viewLifecycleOwner, Observer {
           UserAdapter.setData(it)
         })
+
         val swipeCallback=object :ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT){
             override fun onMove(
                 recyclerView: RecyclerView,
@@ -57,10 +62,8 @@ class FragmentMainTodolist : Fragment(R.layout.main_fragment_todolist) {
 
         ItemTouchHelper(swipeCallback).attachToRecyclerView(binder.userRV)
 
-
-
-
     }
+
 
     override fun onDestroy() {
         super.onDestroy()
