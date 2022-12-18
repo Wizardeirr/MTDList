@@ -12,11 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.volkankelleci.todolist.R
 import com.volkankelleci.todolist.adapter.RecyclerAdapter
 import com.volkankelleci.todolist.databinding.MainFragmentTodolistBinding
-import com.volkankelleci.todolist.model.UserInput
 import com.volkankelleci.todolist.viewmodel.FragmentNotePartViewModel
 import kotlinx.android.synthetic.main.main_fragment_todolist.*
-import kotlinx.android.synthetic.main.recycler_row.*
-import javax.inject.Inject
 
 
 class FragmentMainTodolist : Fragment(R.layout.main_fragment_todolist) {
@@ -38,8 +35,8 @@ class FragmentMainTodolist : Fragment(R.layout.main_fragment_todolist) {
         userRV.adapter=UserAdapter
 
 
-        viewModel=ViewModelProvider(this).get(FragmentNotePartViewModel::class.java)
-        viewModel.readAllDatas.observe(viewLifecycleOwner, Observer {
+        viewModel= ViewModelProvider(this)[FragmentNotePartViewModel::class.java]
+        viewModel.readAllDatas.observe(viewLifecycleOwner, {
           UserAdapter.setData(it)
         })
 
