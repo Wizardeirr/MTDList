@@ -15,7 +15,7 @@ interface UserDao {
     @Update
     suspend fun updateUser(user:UserInput)
     @Delete
-    suspend fun deleteAll(list:List<UserInput>)
+    suspend fun deleteAll(user: UserInput)
     @Query("SELECT*FROM userinput") // that name should be as from model of Entity name
     fun readAllDatas(): LiveData<List<UserInput>>
 }

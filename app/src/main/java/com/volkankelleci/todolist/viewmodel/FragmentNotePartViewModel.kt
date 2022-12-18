@@ -34,6 +34,11 @@ class FragmentNotePartViewModel(application: Application):AndroidViewModel(appli
             repository.updateUser(user)
         }
     }
+    fun deleteUser(user: UserInput){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteUser(user)
+        }
+    }
 
 
     }
