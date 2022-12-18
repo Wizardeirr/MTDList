@@ -44,18 +44,22 @@
         android:id="@+id/updateverifyImage"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:padding="10dp"
-        android:layout_marginTop="130dp"
+
+        android:layout_marginTop="100dp"
         android:layout_marginLeft="10dp"
         android:src="@drawable/update_icon">
 
     </ImageView>
     <TextView
-        android:layout_width="50dp"
+        android:layout_width="60dp"
         android:layout_height="match_parent"
-        android:text="TEST"
+        android:textSize="16sp"
+        android:text="UPDATE"
+        android:textColor="@color/white"
         android:gravity="center"
-        android:layout_marginLeft="19dp"
+        android:textStyle="bold"
+
+        android:layout_marginLeft="15dp"
         >
 
     </TextView>
