@@ -12,9 +12,10 @@ import com.volkankelleci.todolist.roomdb.toDoListDataBase
 import com.volkankelleci.todolist.util.Repository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 
-class FragmentNotePartViewModel(application: Application):AndroidViewModel(application) {
+class FragmentNotePartViewModel@Inject constructor(application: Application):AndroidViewModel(application) {
 
     val readAllDatas:LiveData<List<UserInput>>
     private val repository:Repository

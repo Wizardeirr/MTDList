@@ -7,8 +7,10 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.volkankelleci.todolist.model.UserInput
+import javax.inject.Inject
 
 @androidx.room.Dao
+
 interface UserDao {
     @Insert (onConflict =OnConflictStrategy.REPLACE)
     suspend fun addUser(user:UserInput)
