@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="150dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
     <EditText
         android:id="@+id/updateTitleText"
@@ -21,6 +22,7 @@
         android:padding="15dp"
         android:layout_margin="10dp"
         android:hint="Title"
+        android:background="#2358CA"
         android:textColor="@color/white">
 
     </EditText>
@@ -32,6 +34,7 @@
         android:padding="15dp"
         android:layout_margin="10dp"
         android:ellipsize="end"
+        android:background="#2358CA"
         android:textColor="@color/white"
         android:hint="to do">
 
@@ -55,21 +58,17 @@
         android:src="@drawable/update_icon">
 
     </ImageView>
-    <TextView
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textSize="15sp"
-        android:text="UPDATE"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:layout_marginLeft="15dp"
-        android:padding="1dp"
-        >
 
-    </TextView>
+        <TextView
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:text="UPDATE"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:gravity="center">
 
+        </TextView>
     </LinearLayout>
+
 
 </LinearLayout>
