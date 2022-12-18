@@ -9,17 +9,21 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.volkankelleci.todolist.R
 import com.volkankelleci.todolist.adapter.RecyclerAdapter
+import com.volkankelleci.todolist.databinding.MainFragmentTodolistBinding
 import com.volkankelleci.todolist.viewmodel.FragmentNotePartViewModel
 import kotlinx.android.synthetic.main.main_fragment_todolist.*
 
 class FragmentMainTodolist : Fragment(R.layout.main_fragment_todolist) {
 
     private lateinit var viewModel: FragmentNotePartViewModel
+    private var binding:MainFragmentTodolistBinding?=null
     private val UserAdapter=RecyclerAdapter(arrayListOf())
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val binder=MainFragmentTodolistBinding.bind(view)
+        binding=binder
 
         floatingActionButton.setOnClickListener {
             findNavController().navigate(R.id.fragmentNotePart)
@@ -34,6 +38,11 @@ class FragmentMainTodolist : Fragment(R.layout.main_fragment_todolist) {
         })
 
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding=null
     }
 
 }

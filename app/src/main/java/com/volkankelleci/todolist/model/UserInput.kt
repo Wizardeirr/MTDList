@@ -8,9 +8,8 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 @Entity(tableName = "userinput")
 data class UserInput(
+    @PrimaryKey(autoGenerate = true) //ROOM icin
+    val uuid:Int,
     val title:String,
     val explain:String,
-):Parcelable{
-    @PrimaryKey(autoGenerate = true) //ROOM icin
-    var uuid:Int=0
-}
+):Parcelable

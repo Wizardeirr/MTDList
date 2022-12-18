@@ -29,6 +29,11 @@ class FragmentNotePartViewModel(application: Application):AndroidViewModel(appli
             repository.addUser(user)
         }
     }
+    fun updateUser(user:UserInput){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.updateUser(user)
+        }
+    }
 
 
     }
