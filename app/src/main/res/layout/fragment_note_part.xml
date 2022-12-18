@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#837872">
+    android:background="#0A0A0A">
     <EditText
         android:id="@+id/titleText"
         android:textColorHint="@color/white"
