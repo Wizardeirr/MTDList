@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.volkankelleci.todolist.R
 import com.volkankelleci.todolist.adapter.RecyclerAdapter
 import com.volkankelleci.todolist.databinding.MainFragmentTodolistBinding
@@ -36,6 +38,26 @@ class FragmentMainTodolist : Fragment(R.layout.main_fragment_todolist) {
         viewModel.readAllDatas.observe(viewLifecycleOwner, Observer {
           UserAdapter.setData(it)
         })
+        val swipeCallback=object :ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT){
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder,
+            ): Boolean {
+                return true
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val layoutPosition=viewHolder.layoutPosition
+                val selectedArt=UserAdapter.UserInputs[layoutPosition]
+                viewModel.deleteUser(selectedArt)
+            }
+
+        }
+
+        ItemTouchHelper(swipeCallback).attachToRecyclerView(binder.userRV)
+
+
 
 
     }
